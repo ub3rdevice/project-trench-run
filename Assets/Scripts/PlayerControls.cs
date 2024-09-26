@@ -5,12 +5,10 @@ using UnityEngine.InputSystem;
 
 public class PlayerControls : MonoBehaviour
 {
+    [SerializeField] float controlSpeed = 43f;
+    [SerializeField] float xRange = 8.5f;
+    [SerializeField] float yRange = 5f;
     // [SerializeField] InputAction movement; this var is require for new way of implementing input (same goes for OnEnable() & OnDisable() + NewMovementSystem method below)
-
-    void Start()
-    {
-        
-    }
 
     // void OnEnable() 
     // {
@@ -38,9 +36,19 @@ public class PlayerControls : MonoBehaviour
 
     void Movement() // old way of implementing input
     {
-        float verticalMove = Input.GetAxis("Vertical");
-        Debug.Log(verticalMove);
-        float horizontalMove = Input.GetAxis("Horizontal");
-        Debug.Log(horizontalMove);
+        float yMove = Input.GetAxis("Vertical");
+        float xMove = Input.GetAxis("Horizontal");
+
+        float xOffset = xMove * Time.deltaTime * controlSpeed;
+        float unlimitedXpos = transform.localPosition.x + xOffset;
+
+        float yOffset = yMove * Time.deltaTime * controlSpeed;
+        float unlimitedYpos = transform.localPosition.y + yOffset;
+
+        float limitedXpos = Mathf.Clamp(unlimitedXpos, -xRange, xRange);
+        float limitedYpos = Mathf.Clamp(unlimitedYpos, -yRange, yRange);
+
+        transform.localPosition = new Vector3 (limitedXpos, limitedYpos, transform.localPosition.z);
+
     }
 }
