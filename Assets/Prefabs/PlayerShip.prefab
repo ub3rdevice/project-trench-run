@@ -980,6 +980,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controlSpeed: 43
   xRange: 8.5
+  yRange: 5
+  positionPitchFactor: -2
+  positionYawFactor: 3
+  controlPitchFactor: -15
+  controlRollFactor: -25
 --- !u!1 &3286396015874726612
 GameObject:
   m_ObjectHideFlags: 0

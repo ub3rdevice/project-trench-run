@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,13 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] float controlSpeed = 43f;
     [SerializeField] float xRange = 8.5f;
     [SerializeField] float yRange = 5f;
+    [SerializeField] float positionPitchFactor = -2f;
+    [SerializeField] float positionYawFactor = 3f;
+    [SerializeField] float controlPitchFactor = -15f;
+    [SerializeField] float controlRollFactor = -25f;
+
+    float xMove, yMove;
+
     // [SerializeField] InputAction movement; this var is require for new way of implementing input (same goes for OnEnable() & OnDisable() + NewMovementSystem method below)
 
     // void OnEnable() 
@@ -23,7 +31,20 @@ public class PlayerControls : MonoBehaviour
     void Update()
     {
         // NewMovementSystem();
-        Movement();
+        ProcessAxesMovement();
+        ProcessRotation();
+    }
+
+    void ProcessRotation()
+    {
+        float pitchDueToPosition = transform.localPosition.y * positionPitchFactor;
+        float pitchDueToPlayerInput = yMove * controlPitchFactor;
+
+        float pitch = pitchDueToPosition + pitchDueToPlayerInput;
+        float yaw = transform.localPosition.x * positionYawFactor;
+        float roll = xMove * controlRollFactor;
+
+        transform.localRotation = Quaternion.Euler(pitch,yaw,roll);
     }
 
     // void NewMovementSystem()
@@ -34,10 +55,10 @@ public class PlayerControls : MonoBehaviour
     //     Debug.Log(verticalMove);
     // }
 
-    void Movement() // old way of implementing input
+    void ProcessAxesMovement() // old way of implementing input
     {
-        float yMove = Input.GetAxis("Vertical");
-        float xMove = Input.GetAxis("Horizontal");
+        yMove = Input.GetAxis("Vertical");
+        xMove = Input.GetAxis("Horizontal");
 
         float xOffset = xMove * Time.deltaTime * controlSpeed;
         float unlimitedXpos = transform.localPosition.x + xOffset;
