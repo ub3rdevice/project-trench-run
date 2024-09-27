@@ -506,10 +506,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayRig
       objectReference: {fileID: 0}
-    - target: {fileID: 4660745885979815443, guid: 418d2cf2cdd6a834e912e5db831c502c, type: 3}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 4.5
-      objectReference: {fileID: 0}
     - target: {fileID: 5536186797627694736, guid: 418d2cf2cdd6a834e912e5db831c502c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 99
