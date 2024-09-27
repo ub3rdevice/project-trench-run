@@ -7,10 +7,10 @@ using UnityEngine.InputSystem;
 public class PlayerControls : MonoBehaviour
 {
     [SerializeField] float controlSpeed = 43f;
-    [SerializeField] float xRange = 8.5f;
-    [SerializeField] float yRange = 5f;
+    [SerializeField] float xRange = 15f;
+    [SerializeField] float yRange = 8f;
     [SerializeField] float positionPitchFactor = -2f;
-    [SerializeField] float positionYawFactor = 0.5f;
+    [SerializeField] float positionYawFactor = 2f;
     [SerializeField] float controlPitchFactor = -15f;
     [SerializeField] float controlRollFactor = -25f;
 

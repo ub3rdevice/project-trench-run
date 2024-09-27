@@ -979,10 +979,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controlSpeed: 43
-  xRange: 8.5
-  yRange: 5
+  xRange: 15
+  yRange: 8
   positionPitchFactor: -2
-  positionYawFactor: 3
+  positionYawFactor: 2
   controlPitchFactor: -15
   controlRollFactor: -25
 --- !u!1 &3286396015874726612
