@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -16,7 +17,8 @@ public class PlayerControls : MonoBehaviour
 
     float xMove, yMove;
 
-    // [SerializeField] InputAction movement; this var is require for new way of implementing input (same goes for OnEnable() & OnDisable() + NewMovementSystem method below)
+    // [SerializeField] InputAction movement; this var is required for new way of implementing input (same goes for OnEnable() & OnDisable() + NewMovementSystem method below)
+    // [SerializeField] InputAction fire;
 
     // void OnEnable() 
     // {
@@ -31,8 +33,10 @@ public class PlayerControls : MonoBehaviour
     void Update()
     {
         // NewMovementSystem();
+        // ProcessShootingInNewInputSystem()
         ProcessAxesMovement();
         ProcessRotation();
+        ProcessShooting();
     }
 
     void ProcessRotation()
@@ -46,14 +50,6 @@ public class PlayerControls : MonoBehaviour
 
         transform.localRotation = Quaternion.Euler(pitch,yaw,roll);
     }
-
-    // void NewMovementSystem()
-    // {
-    //     float horizontalMove = movement.ReadValue<Vector2>().x;
-    //     Debug.Log(horizontalMove);
-    //     float verticalMove = movement.ReadValue<Vector2>().y;
-    //     Debug.Log(verticalMove);
-    // }
 
     void ProcessAxesMovement() // old way of implementing input
     {
@@ -72,4 +68,29 @@ public class PlayerControls : MonoBehaviour
         transform.localPosition = new Vector3 (limitedXpos, limitedYpos, transform.localPosition.z);
 
     }
+
+    void ProcessShooting()
+    {
+        if(Input.GetButton("Fire1"))
+        {
+            Debug.Log("I'm shooting");
+        }
+    }
+
+    // void NewMovementSystem()
+    // {
+    //     float horizontalMove = movement.ReadValue<Vector2>().x;
+    //     Debug.Log(horizontalMove);
+    //     float verticalMove = movement.ReadValue<Vector2>().y;
+    //     Debug.Log(verticalMove);
+    // }
+
+    // void ProcessShootingInNewInputSystem()
+    // {
+    //     if(fire.ReadValue<float>() > 0.5)
+    //     {
+    //         Debug.Log("I'm shooting");
+    //     }
+    // }
+
 }
