@@ -436,6 +436,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 46.977, y: -48.659, z: -1.19}
+--- !u!1 &975299497 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6174123617482588690, guid: 418d2cf2cdd6a834e912e5db831c502c, type: 3}
+  m_PrefabInstance: {fileID: 2999767659992844050}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1514055348
 GameObject:
   m_ObjectHideFlags: 0
@@ -489,9 +494,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1771950589 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4393365998352852089, guid: 418d2cf2cdd6a834e912e5db831c502c, type: 3}
+  m_PrefabInstance: {fileID: 2999767659992844050}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1809932795 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3446845037420606479, guid: 418d2cf2cdd6a834e912e5db831c502c, type: 3}
+  m_PrefabInstance: {fileID: 2999767659992844050}
+  m_PrefabAsset: {fileID: 0}
 --- !u!95 &1968222409 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 92828936022622221, guid: 418d2cf2cdd6a834e912e5db831c502c, type: 3}
+  m_PrefabInstance: {fileID: 2999767659992844050}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2024577486 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 244218198093143264, guid: 418d2cf2cdd6a834e912e5db831c502c, type: 3}
   m_PrefabInstance: {fileID: 2999767659992844050}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2999767659992844050
@@ -546,6 +566,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8281892731369317545, guid: 418d2cf2cdd6a834e912e5db831c502c, type: 3}
+      propertyPath: lasers.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281892731369317545, guid: 418d2cf2cdd6a834e912e5db831c502c, type: 3}
+      propertyPath: lasers.Array.data[0]
+      value: 
+      objectReference: {fileID: 975299497}
+    - target: {fileID: 8281892731369317545, guid: 418d2cf2cdd6a834e912e5db831c502c, type: 3}
+      propertyPath: lasers.Array.data[1]
+      value: 
+      objectReference: {fileID: 1809932795}
+    - target: {fileID: 8281892731369317545, guid: 418d2cf2cdd6a834e912e5db831c502c, type: 3}
+      propertyPath: lasers.Array.data[2]
+      value: 
+      objectReference: {fileID: 2024577486}
+    - target: {fileID: 8281892731369317545, guid: 418d2cf2cdd6a834e912e5db831c502c, type: 3}
+      propertyPath: lasers.Array.data[3]
+      value: 
+      objectReference: {fileID: 1771950589}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
