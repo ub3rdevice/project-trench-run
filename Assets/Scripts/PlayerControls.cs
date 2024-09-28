@@ -11,7 +11,7 @@ public class PlayerControls : MonoBehaviour
     [Header("General movement settings")]
     [Tooltip("playerShip speed")][SerializeField] float controlSpeed = 43f;
     [Tooltip("how far playerShip could move on x axis")][SerializeField] float xRange = 15f;
-    [Tooltip("how far playerShip could move on y axis")][SerializeField] float yRange = 8f;
+    [Tooltip("how far playerShip could move on y axis")][SerializeField] float yRange = 10f;
     [Header("Weapons settings")]
     [Tooltip("Selection of weaponry")][SerializeField] GameObject[] lasers;
      [Header("Additional movement settings")]
