@@ -8,14 +8,17 @@ using UnityEngine.InputSystem;
 
 public class PlayerControls : MonoBehaviour
 {
-    [SerializeField] float controlSpeed = 43f;
-    [SerializeField] float xRange = 15f;
-    [SerializeField] float yRange = 8f;
-    [SerializeField] GameObject[] lasers;
-    [SerializeField] float positionPitchFactor = -2f;
-    [SerializeField] float positionYawFactor = 2f;
-    [SerializeField] float controlPitchFactor = -15f;
-    [SerializeField] float controlRollFactor = -25f;
+    [Header("General movement settings")]
+    [Tooltip("playerShip speed")][SerializeField] float controlSpeed = 43f;
+    [Tooltip("how far playerShip could move on x axis")][SerializeField] float xRange = 15f;
+    [Tooltip("how far playerShip could move on y axis")][SerializeField] float yRange = 8f;
+    [Header("Weapons settings")]
+    [Tooltip("Selection of weaponry")][SerializeField] GameObject[] lasers;
+     [Header("Additional movement settings")]
+    [Tooltip("Offsets playerShips pitch")][SerializeField] float positionPitchFactor = -2f;
+    [Tooltip("Offsets playerShips yaw")][SerializeField] float positionYawFactor = 2f;
+    [Tooltip("Adds aditional pitch due to player input")][SerializeField] float controlPitchFactor = -15f;
+    [Tooltip("Adds aditional roll due to player input")][SerializeField] float controlRollFactor = -25f;
 
     float xMove, yMove;
 
