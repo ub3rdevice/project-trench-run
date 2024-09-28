@@ -429,7 +429,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathVFX: {fileID: 3463325066571913937, guid: 47cb69caa095d3a479f323f7e5b10c97, type: 3}
+  impactVFX: {fileID: 7890062860612098408, guid: 1382b1479aae95242a67a41a77e4b730, type: 3}
   parentName: {fileID: 505120574}
+  hitPoints: 12
   scorePerHit: 10
 --- !u!108 &705507994 stripped
 Light:
@@ -469,7 +471,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathVFX: {fileID: 3463325066571913937, guid: 47cb69caa095d3a479f323f7e5b10c97, type: 3}
+  impactVFX: {fileID: 7890062860612098408, guid: 1382b1479aae95242a67a41a77e4b730, type: 3}
   parentName: {fileID: 505120574}
+  hitPoints: 12
   scorePerHit: 10
 --- !u!65 &921590478
 BoxCollider:
@@ -676,7 +680,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathVFX: {fileID: 3463325066571913937, guid: 47cb69caa095d3a479f323f7e5b10c97, type: 3}
+  impactVFX: {fileID: 7890062860612098408, guid: 1382b1479aae95242a67a41a77e4b730, type: 3}
   parentName: {fileID: 505120574}
+  hitPoints: 12
   scorePerHit: 10
 --- !u!1 &1397163608
 GameObject:
@@ -901,7 +907,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathVFX: {fileID: 3463325066571913937, guid: 47cb69caa095d3a479f323f7e5b10c97, type: 3}
+  impactVFX: {fileID: 7890062860612098408, guid: 1382b1479aae95242a67a41a77e4b730, type: 3}
   parentName: {fileID: 505120574}
+  hitPoints: 12
   scorePerHit: 10
 --- !u!65 &1712816104
 BoxCollider:

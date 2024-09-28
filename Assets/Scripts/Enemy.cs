@@ -5,8 +5,11 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] GameObject deathVFX;
+    [SerializeField] GameObject impactVFX;
     [SerializeField] Transform parentName; // Transform because this field relates to the empty gameObject created for nesting any new VFXs and empty gameObject has nothing but Transform component;
+    [SerializeField] int hitPoints = 12;
     [SerializeField] int scorePerHit = 10;
+    
     ScoreBoard scoreBoard;
 
     void Start()
@@ -18,11 +21,18 @@ public class Enemy : MonoBehaviour
     void OnParticleCollision(GameObject other)
     {
         ProcessHit();
-        DestroyEnemy();
+        if (hitPoints < 1)
+        {
+            DestroyEnemy();
+        }
+        
     }
 
     void ProcessHit()
-    {
+    {   
+        GameObject VFX = Instantiate(impactVFX, transform.position, Quaternion.identity);
+        VFX.transform.parent = parentName;
+        hitPoints--; // equals hitpoints = hitpoints - 1;
         scoreBoard.IncreaseScore(scorePerHit);
     }
 
