@@ -1,14 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
-    void OnCollisionEnter(Collision other) {
-        Debug.Log(this.name +"-collided with-" + other.gameObject.name); //there is no point from c# perspective to put "this.name" instead of just "name", since engine will address to the object with this script attached as THIS and every other object as OTHER. 
+    [SerializeField] float lvlLoadDelay = 1f;
+    void OnTriggerEnter(Collider other) {
+
+        StartCrashSequence();
+
     }
 
-    void OnTriggerEnter(Collider other) {
-        Debug.Log($"{name} *triggered by* {other.gameObject.name}"); //another way of string interpolation in C#
+    void ReloadLevel() 
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex);
+    }
+
+    void StartCrashSequence() 
+    {
+        GetComponent<PlayerControls>().enabled = false;
+        Invoke("ReloadLevel",lvlLoadDelay);
     }
 }
