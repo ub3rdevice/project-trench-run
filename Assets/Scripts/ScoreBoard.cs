@@ -15,9 +15,9 @@ public class ScoreBoard : MonoBehaviour
         scoreTextField.text = "Let the carnage begin!";
     }
 
-    public void IncreaseScore(int amountToIncrase) 
+    public void IncreaseScore(int amountToIncrease) 
     {
-        score += amountToIncrase; // a = a + b equals a += b;
+        score += amountToIncrease; // a = a + b equals a += b;
         scoreTextField.text = score.ToString(); // casting int to string
     }
 

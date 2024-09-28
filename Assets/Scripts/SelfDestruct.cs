@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class SelfDestruct : MonoBehaviour
 {   
-    [SerializeField] float timeToKill = 3f;
+    [SerializeField] float timeToKillanObject = 3f;
     void Start()
     {
-        Destroy(gameObject,timeToKill);
+        Destroy(gameObject,timeToKillanObject);
     }
 }
