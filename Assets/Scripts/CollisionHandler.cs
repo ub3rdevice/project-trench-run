@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class CollisionHandler : MonoBehaviour
 {
-    [SerializeField] float lvlLoadDelay = 1f;
+    [SerializeField] ParticleSystem explosionParticles;
+    [SerializeField] float lvlLoadDelay = 3f;
+
     void OnTriggerEnter(Collider other) {
 
         StartCrashSequence();
@@ -21,7 +24,9 @@ public class CollisionHandler : MonoBehaviour
 
     void StartCrashSequence() 
     {
+        explosionParticles.Play();
         GetComponent<PlayerControls>().enabled = false;
+        GetComponent<MeshRenderer>().enabled = false;
         Invoke("ReloadLevel",lvlLoadDelay);
     }
 }
