@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.IO.LowLevel.Unsafe;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -74,27 +75,21 @@ public class PlayerControls : MonoBehaviour
     {
         if(Input.GetButton("Fire1"))
         {
-            EnableLasers();
+            SetLasersEnable(true);
         }
         else
         {
-            DisableLasers();
+            SetLasersEnable(false);
         }
     }
 
-    void EnableLasers()
+    void SetLasersEnable(bool isActive)
     {
         foreach(GameObject laser in lasers)
         {
-            laser.SetActive(true);
-        }
-    }
+            var emissionModule = laser.GetComponent<ParticleSystem>().emission;
+            emissionModule.enabled = isActive;
 
-    void DisableLasers()
-    {
-        foreach(GameObject laser in lasers)
-        {
-            laser.SetActive(false);
         }
     }
 
