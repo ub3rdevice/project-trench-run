@@ -1155,6 +1155,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2705417743932742900, guid: ca9a730c7a66d784fbe386a5c6c1a090, type: 3}
+      propertyPath: m_margin.z
+      value: -71.93274
+      objectReference: {fileID: 0}
     - target: {fileID: 2855483977830163178, guid: ca9a730c7a66d784fbe386a5c6c1a090, type: 3}
       propertyPath: m_Name
       value: Canvas
