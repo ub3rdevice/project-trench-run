@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] GameObject deathVFX;
-    [SerializeField] GameObject impactVFX;
+    [SerializeField] GameObject deathFX;
+    [SerializeField] GameObject impactFX;
     //[SerializeField] Transform parentName; // Transform because this field relates to the empty gameObject created for nesting any new VFXs and empty gameObject has nothing but Transform component;
     GameObject spawnOnRuntimeObject;
     [SerializeField] int hitPoints = 12;
@@ -53,7 +53,7 @@ public class Enemy : MonoBehaviour
 
     void ProcessHit()
     {   
-        GameObject VFX = Instantiate(impactVFX, transform.position, Quaternion.identity);
+        GameObject VFX = Instantiate(impactFX, transform.position, Quaternion.identity);
         VFX.transform.parent = spawnOnRuntimeObject.transform;
         hitPoints--; // equals hitpoints = hitpoints - 1;
         scoreBoard.IncreaseScore(scorePerHit);
@@ -63,7 +63,7 @@ public class Enemy : MonoBehaviour
     {
         scorePerKill = scorePerHit *2;
         scoreBoard.IncreaseScore(scorePerKill);
-        GameObject VFX = Instantiate(deathVFX, transform.position, Quaternion.identity);
+        GameObject VFX = Instantiate(deathFX, transform.position, Quaternion.identity);
         VFX.transform.parent = spawnOnRuntimeObject.transform; // assigning instantiated VFXs to new parent with name parentName
         Destroy(gameObject);
     }

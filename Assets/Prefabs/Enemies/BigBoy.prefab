@@ -421,10 +421,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db03262826090194781fea8b753b38a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathVFX: {fileID: 3463325066571913937, guid: 47cb69caa095d3a479f323f7e5b10c97, type: 3}
-  impactVFX: {fileID: 7890062860612098408, guid: 1382b1479aae95242a67a41a77e4b730, type: 3}
+  deathFX: {fileID: 3463325066571913937, guid: 47cb69caa095d3a479f323f7e5b10c97, type: 3}
+  impactFX: {fileID: 7890062860612098408, guid: 1382b1479aae95242a67a41a77e4b730, type: 3}
   hitPoints: 36
   scorePerHit: 250
+  scorePerKill: 0
 --- !u!1 &1344529227526734857
 GameObject:
   m_ObjectHideFlags: 0
