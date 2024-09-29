@@ -388,7 +388,7 @@ GameObject:
   - component: {fileID: 1804993804696491338}
   m_Layer: 0
   m_Name: BadBoy1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -474,7 +474,7 @@ MonoBehaviour:
   deathVFX: {fileID: 3463325066571913937, guid: 47cb69caa095d3a479f323f7e5b10c97, type: 3}
   impactVFX: {fileID: 7890062860612098408, guid: 1382b1479aae95242a67a41a77e4b730, type: 3}
   parentName: {fileID: 0}
-  hitPoints: 12
+  hitPoints: 6
   scorePerHit: 15
 --- !u!1 &4525193098212663847
 GameObject:
