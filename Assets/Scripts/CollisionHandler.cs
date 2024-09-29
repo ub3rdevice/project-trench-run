@@ -49,6 +49,6 @@ public class CollisionHandler : MonoBehaviour
         explosionParticles.Play();
         GetComponent<PlayerControls>().enabled = false;
         GetComponent<MeshRenderer>().enabled = false;
-        Invoke("ReloadLevel",lvlLoadDelay);
+        Invoke("ReloadLevel",lvlLoadDelay); //wrap up in coroutine
     }
 }
