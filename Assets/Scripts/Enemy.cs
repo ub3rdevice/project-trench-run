@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -11,11 +13,23 @@ public class Enemy : MonoBehaviour
     [SerializeField] int scorePerHit = 10;
     
     ScoreBoard scoreBoard;
+    
 
     void Start()
     {
+        AddRigidBody();
+        SearchForScoreboard();
+    }
+
+    void SearchForScoreboard()
+    {
         scoreBoard = FindObjectOfType<ScoreBoard>();  //search through the whole project and then referes to the very first scoreboard it finds. Better don't use this method anywhere where it will run for more than 1 time.
-        
+    }
+
+    void AddRigidBody()
+    {
+        Rigidbody _rigidbody = gameObject.AddComponent<Rigidbody>();
+        _rigidbody.useGravity = false;
     }
 
     void OnParticleCollision(GameObject other)
