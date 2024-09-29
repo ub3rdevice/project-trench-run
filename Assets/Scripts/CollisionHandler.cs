@@ -10,10 +10,16 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] ParticleSystem explosionParticles;
     [SerializeField] float lvlLoadDelay = 3f;
 
-    void OnTriggerEnter(Collider other) {
+    // void OnTriggerEnter(Collider other) { // in case we want to trigger something particular after we collide with object
+
+    //     StartCrashSequence();
+
+    // }
+
+    void OnCollisionEnter(Collision other) {
 
         StartCrashSequence();
-
+        
     }
 
     void ReloadLevel() 
