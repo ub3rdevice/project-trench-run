@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     GameObject spawnOnRuntimeObject;
     [SerializeField] int hitPoints = 12;
     [SerializeField] int scorePerHit = 10;
+    [SerializeField] int scorePerKill;
     
     ScoreBoard scoreBoard;
     
@@ -60,6 +61,8 @@ public class Enemy : MonoBehaviour
 
     void DestroyEnemy()
     {
+        scorePerKill = scorePerHit *2;
+        scoreBoard.IncreaseScore(scorePerKill);
         GameObject VFX = Instantiate(deathVFX, transform.position, Quaternion.identity);
         VFX.transform.parent = spawnOnRuntimeObject.transform; // assigning instantiated VFXs to new parent with name parentName
         Destroy(gameObject);
