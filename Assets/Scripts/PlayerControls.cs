@@ -20,6 +20,7 @@ public class PlayerControls : MonoBehaviour
     [Tooltip("Adds aditional pitch due to player input")][SerializeField] float controlPitchFactor = -8f;
     [Tooltip("Adds aditional roll due to player input")][SerializeField] float controlRollFactor = -25f;
 
+
     float xMove, yMove;
 
     // [SerializeField] InputAction movement; this var is required for new way of implementing input (same goes for OnEnable() & OnDisable() + NewMovementSystem method below)
@@ -92,9 +93,10 @@ public class PlayerControls : MonoBehaviour
         {
             var emissionModule = laser.GetComponent<ParticleSystem>().emission;
             emissionModule.enabled = isActive;
-
         }
+        
     }
+        
 
     // void NewMovementSystem()
     // {
